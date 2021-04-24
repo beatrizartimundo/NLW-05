@@ -11,6 +11,8 @@ import ptBR from 'date-fns/locale/pt-BR'
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString'
 import styles from './home.module.scss'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { PlayerContext } from '../contexts/PlayerContext'
 
 type Episode = {
   id: string;
@@ -18,7 +20,7 @@ type Episode = {
   thumbnail: string;
   description: string;
   members: string;
-  duration: string;
+  duration: number;
   durationAsString: string;
   url: string;
   publishedAt: string;
@@ -40,6 +42,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   //SSR
   //console.log(props.episodes)
 
+const { play } = useContext(PlayerContext)
 
   return (
     //SSR e SSG
@@ -68,7 +71,8 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   <span>{episode.durationAsString}</span>
                 </div>
 
-                <button type="button">
+                <button type="button" 
+                onClick={()=> play(episode)}>
                   <img src="/play-green.svg" alt="Tocar episodio"/>
                 </button>
               </li>
