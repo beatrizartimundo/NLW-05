@@ -5,6 +5,7 @@
 }
 :root {
     --white: #FFF;
+    --white2:#FFF;
   
     --gray-50: #F7F8FA;
     --gray-100: #E6E8EB;
@@ -19,20 +20,49 @@
     --purple-500: #8257E5;
     --purple-800: #6F48C9;
 }
+:root .dark-mode{
+    --white: #8257E5;
+    --white2:#FFF;
+  
+    --gray-50: #02060f;
+    --gray-100: #E6E8EB;
+    --gray-200: #F7F8FA;
+    --gray-500: #ffffff;
+    --gray-800: white;
+  
+    --green-500: #04D361;
+    
+    --purple-300: #9F75FF;
+    --purple-400: #9164FA; 
+    --purple-500: #8257E5;
+    --purple-800: #6F48C9;
+}
 
 body{
     background: var(--gray-50);
+    
+    // &.dark-mode{
+    //     background: var(--gray-800);
+    // }
 }
 
 body,input,textarea,button{
     font: 500 1rem Inter, sans-serif;
     color: var(--gray-500);
+
+    // &.dark-mode{
+    //     color: var(--gray-100);
+    // }
 }
 
 h1,h2,h3,h4,h5,h6{
     font-weight: 600;
     font-family: Lexend,sans-serif;
-    color: var(--gray-800)
+    color: var(--gray-800);
+
+    &.dark-mode{
+        color: var(--gray-100);
+    }
 }
 
 h1{
