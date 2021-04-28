@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 :root {
-    --white: #FFF;
-    --white2:#FFF;
+    --background: #FFF;
+    --fontWhite:#FFF;
   
-    --gray-50: #F7F8FA;
+    --body: #F7F8FA;
     --gray-100: #E6E8EB;
     --gray-200: #AFB2B1;
     --gray-500: #808080;
@@ -21,10 +21,10 @@
     --purple-800: #6F48C9;
 }
 :root .dark-mode{
-    --white: #8257E5;
-    --white2:#FFF;
+    --background: #8257E5;
+    --fontWhite:#FFF;
   
-    --gray-50: #02060f;
+    --body: #02060f;
     --gray-100: #E6E8EB;
     --gray-200: #F7F8FA;
     --gray-500: #ffffff;
@@ -39,11 +39,7 @@
 }
 
 body{
-    background: var(--gray-50);
-    
-    // &.dark-mode{
-    //     background: var(--gray-800);
-    // }
+    background: var(--body);
 }
 
 body,input,textarea,button{

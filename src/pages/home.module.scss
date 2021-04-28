@@ -18,7 +18,7 @@
         gap: 1.5rem;
 
         li{
-            background: var(--white);
+            background: var(--background);
             border: 1px solid var(--gray-100);
             padding: 1.25rem;
             border-radius: 1.5rem;
@@ -94,7 +94,7 @@
 
                 width: 2.5rem;
                 height: 2.5rem;
-                background: var(--white);
+                background: var(--background);
                 border:1px solid var(--gray-100);
                 border-radius: 0.675rem;
                 font-size: 0;
@@ -156,7 +156,7 @@
         button{
             width: 2rem;
             height: 2rem;
-            background: var(--white);
+            background: var(--background);
             border:1px solid var(--gray-100);
             border-radius: 0.5rem;
             font-size: 0;
