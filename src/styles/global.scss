@@ -24,7 +24,7 @@
     --background: #8257E5;
     --fontWhite:#FFF;
   
-    --body: #02060f;
+    --body: #02060fce;
     --gray-100: #E6E8EB;
     --gray-200: #AFB2B1;
     --gray-500: #808080;
@@ -53,9 +53,6 @@ h1,h2,h3,h4,h5,h6{
     font-family: Lexend,sans-serif;
     color: var(--fontGrayWhite);
 
-    &.dark-mode{
-        color: var(--gray-100);
-    }
 }
 
 h1{
@@ -77,4 +74,5 @@ button{
     html{
         font-size: 87.5%;
     }
+        
 }
