@@ -61,6 +61,7 @@ export  function Player() {
     const episode = episodeList[currentEpisodeIndex]
     
     let isPageWide = useMediaQuery('(max-width: 720px)')
+    let isPage = useMediaQuery('(min-width: 721px)')
 
   return(
       <div className={styles.playerContainer}>
@@ -68,8 +69,9 @@ export  function Player() {
             <img src="/playing.svg" alt="Tocando agora"/>
             <strong>Tocando agora</strong>
         </header>
-        
-        { episode  ? (
+
+                
+        { episode && isPage ? (
             <div className={styles.currentEpisode}>
                 <Image
                 width={592}
@@ -83,13 +85,20 @@ export  function Player() {
                                
 
             </div>
+        ):episode && isPageWide?(
+            <div className={styles.currentEpisode}>
+                  <strong>{episode.title}</strong>
+                  
+                               
+
+            </div>
         ):(
 
             <div className={styles.emptyPlayer}>
                 <strong>Selecione um podcast para ouvir</strong>
             </div>
 
-        )}
+        )} 
 
         <footer className={styles.empty}>
             <div className={styles.progress}>

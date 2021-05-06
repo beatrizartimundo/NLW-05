@@ -15,10 +15,10 @@
     @media(max-width:720px){
         position: fixed;
         bottom: 0;
-        height: 12rem;
+        padding: 1.5rem;
+        height: 17rem;
         width: 100%;
-        
-        
+        font: 100 0.75rem Lexend,sans-serif;
         .header{
             display: none;
         }
@@ -63,7 +63,7 @@
         line-height: 1.5rem;
     }
     @media(max-width:720px){
-        display: none;
+        font: 100 0.75rem Lexend,sans-serif;
     }
 
 }
