@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString'
+import {useMediaQuery} from '../../utils/mediaQuery'
 
 export  function Player() {
     const audioRef = useRef<HTMLAudioElement>(null)
@@ -58,25 +59,28 @@ export  function Player() {
         }
     }
     const episode = episodeList[currentEpisodeIndex]
+    
+    let isPageWide = useMediaQuery('(max-width: 720px)')
 
   return(
       <div className={styles.playerContainer}>
-        <header>
+        <header className={styles.header}>
             <img src="/playing.svg" alt="Tocando agora"/>
             <strong>Tocando agora</strong>
         </header>
         
-        { episode ? (
+        { episode  ? (
             <div className={styles.currentEpisode}>
                 <Image
                 width={592}
                 height={592}
                 src={episode.thumbnail}
                 objectFit="cover"
-
+                
                 />
-                <strong>{episode.title}</strong>
-                <span>{episode.members}</span>
+                  <strong>{episode.title}</strong>
+                  <span>{episode.members}</span>  
+                               
 
             </div>
         ):(
