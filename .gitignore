@@ -31,6 +31,10 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# vercel
+# others
 .vercel
 package-lock.json
+
+**/public/workbox-*.js
+**/public/sw.js
+**/public/worker-*.js
