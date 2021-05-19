@@ -30,11 +30,22 @@
 
             display: flex;
             align-items: center;
-
+                @media(max-width: 720px){
+        
+                    width: 92%;
+                    padding: 0.75rem; 
+                    
+                    .mobileImg{
+                        // display: none;
+                        visibility: hidden;
+                    }
+                } 
+                
             img{
                 width: 6rem;
                 height: 6rem;
                 border-radius: 1rem;
+
             }
 
             .episodeDetails{
@@ -89,6 +100,9 @@
                     }
                 }
                 
+                @media(max-width: 408px){
+                    margin-left: 0rem;  
+                }
 
                 
             }
@@ -113,12 +127,18 @@
                 &:hover{
                     filter: brightness(0.9);
                 }
+
+                @media(max-width: 720px){
+        
+                    right: 0.75rem;
+                    bottom: 1rem;   
+                }
             }
         }
       @media(max-width: 720px){
        
         grid-template-columns: 1fr;
-        
+        gap: 1rem;    
     }  
     }
     
@@ -135,6 +155,16 @@
         @media(max-width:720px){
             width: 50%;
             .mobile{
+                display: none;
+            }
+            
+        }
+        @media(max-width:408px){
+            width: 100%;
+            .mobile{
+                display: none;
+            }
+            .mobileSmall{
                 display: none;
             }
             

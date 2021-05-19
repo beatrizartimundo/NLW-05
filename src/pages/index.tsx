@@ -55,11 +55,11 @@ const episodeList = [... latestEpisodes, ...allEpisodes]
           <title>Home | Podcastr</title>
         </Head>
         <h2>Últimos lançamentos</h2>
-
-        <ul>
+{/* add data test */}
+        <ul data-test="lastEpisode">
           {latestEpisodes.map((episode,index) => {
             return(
-              //identificação importante para o react saber em qual esta
+              //identificação importante para o react saber em episodio qual esta
               <li key={episode.id}>
                 <Image 
                   width={192} 
@@ -67,6 +67,7 @@ const episodeList = [... latestEpisodes, ...allEpisodes]
                   src={episode.thumbnail} 
                   alt={episode.title}
                   objectFit="cover"
+                  className={styles.mobileImg}
                   />
                 <div className={styles.episodeDetails}>
                   <Link href={`/episodes/${episode.id}`}>
@@ -95,7 +96,7 @@ const episodeList = [... latestEpisodes, ...allEpisodes]
               <tr>
               <th className={styles.mobile}></th>
               <th>Podcast</th>
-              <th>Integrantes</th>
+              <th className={styles.mobileSmall}>Integrantes</th>
               <th>Data - Duração</th>
               {/* <th>Duração</th> */}
               <th></th>
@@ -114,6 +115,7 @@ const episodeList = [... latestEpisodes, ...allEpisodes]
                       src={episode.thumbnail}
                       alt={episode.title}
                       objectFit="cover"
+                      
                       />
                     </td>
                     <td>
@@ -121,7 +123,7 @@ const episodeList = [... latestEpisodes, ...allEpisodes]
                     <a>{episode.title}</a>
                     </Link>
                     </td>
-                    <td>{episode.members}</td>
+                    <td className={styles.mobileSmall}>{episode.members}</td>
                     <td style={{width:100}}><span>{episode.publishedAt}</span>
                   <span>{episode.durationAsString}</span></td>
                     {/* <td>{episode.durationAsString}</td> */}
