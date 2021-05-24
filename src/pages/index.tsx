@@ -107,7 +107,7 @@ const episodeList = [... latestEpisodes, ...allEpisodes]
             <tbody>
               {allEpisodes.map((episode,index) =>{
                 return(
-                  <tr key={episode.id}>
+                  <tr key={episode.id} data-test="allEpisodes">
                     <td  className={styles.mobile} style={{width:72}}>
                       <Image
                       width={120}

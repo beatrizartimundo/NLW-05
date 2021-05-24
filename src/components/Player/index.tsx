@@ -64,10 +64,10 @@ export  function Player() {
     let isPage = useMediaQuery('(min-width: 721px)')
 
   return(
-      <div className={styles.playerContainer}>
+      <div className={styles.playerContainer} data-test="player">
         <header className={styles.header}>
             <img src="/playing.svg" alt="Tocando agora"/>
-            <strong>Tocando agora</strong>
+            <strong data-test="playerHead">Tocando agora</strong>
         </header>
 
                 
@@ -100,7 +100,7 @@ export  function Player() {
 
         )} 
 
-        <footer className={styles.empty}>
+        <footer className={styles.empty} data-test="playerFooter">
             <div className={styles.progress}>
                 <span>{convertDurationToTimeString(progress)}</span>
                 <div className={styles.slider}>
@@ -118,7 +118,7 @@ export  function Player() {
 
                     )}
                 </div>
-                <span>{convertDurationToTimeString(episode?.duration ?? 0)}</span>            
+                <span data-test="sliderTimeEnd">{convertDurationToTimeString(episode?.duration ?? 0)}</span>            
             </div>
 
             { episode && (
@@ -141,13 +141,16 @@ export  function Player() {
                     disabled={!episode || episodeList.length === 1}
                     onClick={toggleSuffle}
                     className={isShuffling ? styles.isActive : ''}
+                    data-test="playerShuffleBtn"
                 >
                     <img src="/shuffle.svg" alt="Embaralhar"/>
                 </button>
 
                 <button type="button" 
                     disabled={!episode || !hasPrevious} 
-                    onClick={playPrevious}>
+                    onClick={playPrevious}
+                    data-test="playerPreviousBtn"
+                    >
                     <img src="/play-previous.svg" alt="Tocar anterior"/>
                 </button>
 
@@ -155,21 +158,25 @@ export  function Player() {
                    className={styles.playButton} 
                    disabled={!episode}
                    onClick={togglePlay}
+                   data-test="playerPlayBtn"
                    >
                 { isPlaying
-                  ?<img src="/pause.svg" alt="Tocar"/>
-                  :<img src="/play.svg" alt="Tocar"/>
+                  ?<img src="/pause.svg" alt="Tocar" data-test="playerPause"/>
+                  :<img src="/play.svg" alt="Tocar"data-test="playerPlay"/>
                 }
                 </button>
                 <button type="button" 
                     disabled={!episode || !hasNext} 
-                    onClick={playNext}>
+                    onClick={playNext}
+                    data-test="playerNextBtn"
+                    >
                     <img src="/play-next.svg" alt="Tocar proxima"/>
                 </button>
                 <button type="button" 
                 disabled={!episode}
                 onClick={toggleLoop}
                 className={isLooping ? styles.isActive : ''}
+                data-test="playerRepeatBtn"
                 >
                     <img src="/repeat.svg" alt="Repetir"/>
                 </button>
